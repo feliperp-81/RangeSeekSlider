@@ -187,6 +187,9 @@ import UIKit
     /// Selected handle diameter multiplier (default 1.7)
     @IBInspectable open var selectedHandleDiameterMultiplier: CGFloat = 1.7
 
+    /// Slider line padding (default 16.0)
+    @IBInspectable open var barLineSidePadding: CGFloat = 16.0
+    
     /// Set the slider line height (default 1.0)
     @IBInspectable open var lineHeight: CGFloat = 1.0 {
         didSet {
@@ -459,7 +462,7 @@ import UIKit
     }
 
     private func updateLineHeight() {
-        let barSidePadding: CGFloat = 16.0
+        let barSidePadding: CGFloat = barLineSidePadding
         let yMiddle: CGFloat = frame.height / 2.0
         let lineLeftSide: CGPoint = CGPoint(x: barSidePadding, y: yMiddle)
         let lineRightSide: CGPoint = CGPoint(x: frame.width - barSidePadding,
